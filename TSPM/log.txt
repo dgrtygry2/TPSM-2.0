@@ -1,0 +1,8 @@
+TSPM: What do you think about, " Hello"? 
+TSPM: What do you think about, " Hello I think Hello means as a formal greeting."? 
+TSPM: What do you think about, " Hello I think Hello means as a formal greeting. Hello means a formal greeting."? 
+TSPM: What do you think about, " Hello"? 
+TSPM: What do you think about, " Hi"? 
+TSPM: What do you think about, " Hi" 
+TSPM: What do you think about, " Hello" 
+TSPM: What do you think about, " Hello" 

@@ -1,0 +1,105 @@
+Option 1: Wake up
+Option Selected 1: You wake up and enter a forest. You see two places. A building and a academy.
+Option 1: Go to academy.
+Option Selected 1: You go to the academy and see it is closed for the day. You exit the academy and see 3 things. A bridge, A rockwall and a mountain. Where do you go? 
+Option 1: Mountain.
+Option Selected 1: You climb the mountain and see gold. Do you go?
+Option 1: Go
+Option Selected 1: You go to the mountain and see a course. There are 3 paths. Parkour, Spike hops and climbwalls. Which do you go to?
+Option 1: Parkour
+Option Selected 1: You go to the spike hops and 
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+Option 1:
+Option Selected 1:
+
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+Option 2:
+Option Selected 2:
+
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+Option 3:
+Option Selected 3:
+

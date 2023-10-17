@@ -1,2 +1,7 @@
-# This is TPSM's brain. It enables TPSM to learn.
-AI: I am TPSM, A advanced computer program designed to be smart. I am designed to be an AI that learns.
+".=" 
+ok 
+yrd 
+ok 
+yht 
+y\ 
+Hello 
