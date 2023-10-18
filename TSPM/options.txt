@@ -7,99 +7,29 @@ Option Selected 1: You climb the mountain and see gold. Do you go?
 Option 1: Go
 Option Selected 1: You go to the mountain and see a course. There are 3 paths. Parkour, Spike hops and climbwalls. Which do you go to?
 Option 1: Parkour
-Option Selected 1: You go to the spike hops and 
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
-Option 1:
-Option Selected 1:
+Option Selected 1: You go to the spike hops and see you have three lives. What do you do?
+Option 1: Drink health potion.
+Option Selected 1: Do you hop slowly, quickly or medium? 
+Option 1: Slowly
+Option Selected 1: You manage to get to the other side. Now you have three paths. Easy hard and medium.
+Option 1: You take easy path and find treasure. How do you hall it back? Do you carry it, push it or pull it home?
+Option Selected 1: Hall it back.
+Option 1: You hall it back and are now back home. But oh no! Your keys are lost! But you have 3 spare keys. Which do you get?
+Option Selected 1: Key 1
+Option 1: It doesn't work so you break it and hall the treasure in. You open it and see 1 million dollars.
+Option Selected 1: You live a happy life!
+Option 1: The end!
 
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
-Option 2:
-Option Selected 2:
+Option 2: Wake up
+Option Selected 2: You wake up and enter a forest. You see two places. A building and a academy.
+Option 2: Enter building.
+Option Selected 2: You enter building and see nothing is there so you go to academy but it is closed for the day so you see 3 things. A bridge, A rockwall and a mountain. Which do you go to?
+Option 2: Bridge
+Option Selected 2: You cross the bridge and find treasure!
+Option 2: You win!
 
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-Option 3:
-Option Selected 3:
-
+Option 3: Wake up
+Option Selected 3: You wake up and enter a forest. You see two places. A building and a academy.
+Option 3: Do nothing
+Option Selected 3: You do nothing and watch tv. That's it.
+Option 3: The end!
