@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPSM.sh Output</title>
+</head>
+<body>
+    <h1>TPSM.sh Output</h1>
+    <div id="output"></div>
+
+    <script>
+        function runScript() {
+            const outputDiv = document.getElementById('output');
+            
+            // Clear previous output
+            outputDiv.innerHTML = '';
+
+            // Execute TPSM.sh script
+            const script = 'TPSM.sh';
+            const process = Deno.run({
+                cmd: ['sh', script],
+                stdout: 'piped',
+                stderr: 'piped'
+            });
+
+            // Read and display output
+            process.outputReader = async () => {
+                const decoder = new TextDecoder();
+                const chunks = [];
+                const buf = new Uint8Array(1024);
+                let n;
+
+                while ((n = await process.stdout.read(buf)) > 0) {
+                    chunks.push(buf.subarray(0, n));
+                }
+
+                const output = decoder.decode(Uint8Array.concat(chunks));
+                outputDiv.innerHTML += output;
+            };
+
+            process.errorReader = async () => {
+                const decoder = new TextDecoder();
+                const chunks = [];
+                const buf = new Uint8Array(1024);
+                let n;
+
+                while ((n = await process.stderr.read(buf)) > 0) {
+                    chunks.push(buf.subarray(0, n));
+                }
+
+                const output = decoder.decode(Uint8Array.concat(chunks));
+                console.error(output);
+            };
+
+            await Promise.all([
+                process.outputReader(),
+                process.errorReader()
+            ]);
+
+            process.close();
+        }
+
+        // Run the script when the page loads
+        window.onload = runScript;
+    </script>
+</body>
+</html>
