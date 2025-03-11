@@ -1,5 +1,7 @@
 @echo off
 cls
+setlocal enabledelayedexpansion
+
 REM Set the file paths for training data and user information
 set "data_file=data.txt"
 set "log_file=log.txt"
@@ -11,7 +13,7 @@ REM Initialize the chatbot name
 if exist "%chatbotname_file%" (
     for /f "usebackq delims=" %%a in ("%chatbotname_file%") do set "chatbot_name=%%a"
 ) else (
-    set "chatbot_name=TrainBot"
+    set "chatbot_name=Chatbot"
 )
 
 REM Initialize the username
@@ -28,65 +30,83 @@ REM Main training loop
 :train_loop
 set /p user_input="You: "
 if "%user_input%"=="" goto :train_loop
-if /i "%user_input%"=="exit" goto :train_end
 
-echo You: %user_input% >> %data_file%
-echo %user_input% >> %log_file%
+echo You: %user_input% >> "%data_file%"
+echo %user_input% >> "%log_file%"
 
+REM Ask the bot how to respond
 echo %chatbot_name%: How should I respond?
 set /p bot_response="You (provide response): "
 
+REM Learn from the user's response and log it
 echo %chatbot_name%: Learning from your response...
-echo %bot_response% >> %log_file%
+echo %bot_response% >> "%log_file%"
 
 REM Generate questions, prompts, and interest inquiries based on the context of the conversation
 set "questions="
 set "prompts="
 set "interest_inquiries="
 
-for /f "delims=" %%a in (%log_file%) do (
+for /f "usebackq delims=" %%a in ("%log_file%") do (
     set "response=%%a"
-    call :generate_context "%%a"
+
+    REM Check for predefined responses
+    if "!response!"=="I like it." (
+        set "question=Why do you like it?"
+        set "prompt=What else do you like?"
+    )
+    if "!response!"=="I don't understand." (
+        set "question=What don't you understand?"
+        set "prompt=Can you explain further?"
+    )
+    if "!response!"=="I agree." (
+        set "question=Why do you agree?"
+        set "prompt=What do you agree with?"
+    )
+
+    REM Add generic conversational questions
+    set "questions=!questions! !question! Out of curiosity, why do you think this?"
+    set "prompts=!prompts! !prompt! Just curious, what do you mean by this?"
+    set "questions=!questions! Wow! Interesting. What else?"
+    set "prompts=!prompts! Why do you think it's interesting like this?"
+
+    REM Generate interest inquiries based on keywords
+    for %%w in (interest hobby like dislike) do (
+        echo !response! | find /i "%%w" >nul
+        if not errorlevel 1 (
+            set "interest_inquiry=Oh! So you really like %%w?"
+            set "interest_inquiries=!interest_inquiries! !interest_inquiry!"
+        )
+    )
 )
 
+REM Display and save the generated responses
 echo %chatbot_name%: Possible questions based on the context: %questions%
-echo %chatbot_name%: %questions% >> %brain_file%
-echo %chatbot_name%: Prompts based on the context: %prompts%
-echo %chatbot_name%: %prompts% >> %brain_file%
-echo %chatbot_name%: Interest inquiries: %interest_inquiries%
-echo %chatbot_name%: %interest_inquiries% >> %brain_file%
+echo %chatbot_name%: %questions% >> "%brain_file%"
 
+echo %chatbot_name%: Prompts based on the context: %prompts%
+echo %chatbot_name%: %prompts% >> "%brain_file%"
+
+echo %chatbot_name%: Interest inquiries: %interest_inquiries%
+echo %chatbot_name%: %interest_inquiries% >> "%brain_file%"
+
+REM Display the bot's response based on the learned data
 echo %chatbot_name%: %bot_response%
-echo %chatbot_name%: %bot_response% >> %log_file%
+echo %chatbot_name%: %bot_response% >> "%log_file%"
+
+REM Check if user wants to exit
+if /i "%bot_response%"=="exit" goto :train_end
 
 goto :train_loop
-
-:generate_context
-setlocal
-set "response=%~1"
-
-if /i "%response%"=="I like it." set "questions=%questions% Why do you like it?" & set "prompts=%prompts% What else do you like?"
-if /i "%response%"=="I don't understand." set "questions=%questions% What don't you understand?" & set "prompts=%prompts% Can you explain further?"
-if /i "%response%"=="I agree." set "questions=%questions% Why do you agree?" & set "prompts=%prompts% What do you agree with?"
-
-REM General curiosity questions
-set "questions=%questions% Out of curiosity, why do you think this?"
-set "prompts=%prompts% Out of curiosity, what do you mean by this?"
-set "questions=%questions% Just curious, why do you think this?"
-set "prompts=%prompts% Just curious, what do you mean by this?"
-
-endlocal & set "questions=%questions%" & set "prompts=%prompts%"
-exit /b
 
 :train_end
 REM Return to the main menu or exit
 set /p return_to_menu="Return to the main menu? (Y/N): "
 if /i "%return_to_menu%"=="Y" (
-    if exist TSPM.bat (
+    if exist "TSPM.bat" (
         call TSPM.bat
     ) else (
-        echo Main menu script not found. Exiting...
-        exit
+        echo Main menu file not found. Exiting.
     )
 ) else (
     exit
